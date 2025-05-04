@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Order Confirmed - Mad Stylio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo">Mad Stylio</div>
+    <ul>
+      <li><a href="index.html">Menu</a></li>
+      <li><a href="cart.html">🛒 Cart (<span id="cart-count">0</span>)</a></li>
+    </ul>
+  </nav>
+
+  <h1>Thank you for ordering at Mad Stylio!</h1>
+  <p>Your food will be delivered soon.</p>
+  <a href="index.html" onclick="clearCart()">Back to Menu</a>
+
+  <script>
+    function clearCart() {
+      localStorage.removeItem("cart");
+    }
+
+    function updateCartCount() {
+      const countElement = document.getElementById("cart-count");
+      if (countElement) countElement.innerText = 0;
+    }
+
+    document.addEventListener("DOMContentLoaded", updateCartCount);
+  </script>
+</body>
+</html>
